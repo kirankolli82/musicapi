@@ -39,6 +39,12 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	// https://mvnrepository.com/artifact/org.reflections/reflections
 	implementation 'org.reflections:reflections:0.10.2'
+	// Jackson JAX-RS provider so Resteasy client can use the Spring ObjectMapper to marshal/unmarshal JSON
+	implementation 'org.jboss.resteasy:resteasy-jackson2-provider:7.0.0.Final'
+
+
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 	testImplementation 'org.springframework.security:spring-security-test'

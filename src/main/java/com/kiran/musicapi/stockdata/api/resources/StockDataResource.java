@@ -1,6 +1,8 @@
 package com.kiran.musicapi.stockdata.api.resources;
 
 import com.kiran.musicapi.stockdata.api.client.QuoteClient;
+
+import com.kiran.musicapi.stockdata.api.contract.StockApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +18,8 @@ public class StockDataResource {
     }
 
     @GetMapping("/quotes")//NVDA,MSFT,AAPL,GOOGL,AMZN,META,TSLA
-    public String quotes(){
+    public StockApiResponse quotes(){
         log.info("Fetching quotes");
-
-        return quoteClient.getQuote(
-                "NVDA,MSFT,AAPL", true);//"DQvEc1Jf2HB7BKpr8oQT9eDOAkPTBzedFlSHxrU4"
+        return quoteClient.getQuote("NVDA,MSFT,AAPL", true);
     }
 }
