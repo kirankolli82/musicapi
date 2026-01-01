@@ -219,7 +219,7 @@ void setUp() {
 
 ## Troubleshooting
 
-- **PERMISSION_DENIED errors**: See `TROUBLESHOOTING_SECRET_MANAGER.md`
+- **PERMISSION_DENIED errors**: See [TROUBLESHOOTING_SECRET_MANAGER.md](TROUBLESHOOTING_SECRET_MANAGER.md)
 - **Cache not working**: Enable debug logging (`logging.level.org.springframework.cache=DEBUG`)
 - **Secret not updating**: Wait for scheduled cache eviction or manually clear cache
 

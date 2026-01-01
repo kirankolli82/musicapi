@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class MusicapiApplication {
+public class StockApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MusicapiApplication.class, args);
+		SpringApplication.run(StockApiApplication.class, args);
 	}
 
 }
