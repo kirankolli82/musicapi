@@ -227,7 +227,7 @@ jooq {
 						fluentSetters = true
 					}
 					target {
-						packageName = 'com.kiran.musicapi.jooq'
+						packageName = 'com.kiran.stockapi.jooq'
 						directory = 'build/generated-src/jooq/main'
 					}
 				}
