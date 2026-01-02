@@ -24,4 +24,3 @@ public class AlphaVantageResource {
 		return alphaVantageClient.getRealtimeBulkQuotes("REALTIME_BULK_QUOTES", symbols);
 	}
 }
-

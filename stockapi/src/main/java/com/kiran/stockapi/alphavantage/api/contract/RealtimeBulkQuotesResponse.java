@@ -15,13 +15,12 @@ import lombok.ToString;
 @Builder(toBuilder = true)
 public final class RealtimeBulkQuotesResponse {
 
-    @JsonProperty("endpoint")
-    private final String endpoint;
+	@JsonProperty("endpoint")
+	private final String endpoint;
 
-    @JsonProperty("message")
-    private final String message;
+	@JsonProperty("message")
+	private final String message;
 
-    @JsonProperty("data")
-    private final List<StockQuote> data;
+	@JsonProperty("data")
+	private final List<StockQuote> data;
 }
-

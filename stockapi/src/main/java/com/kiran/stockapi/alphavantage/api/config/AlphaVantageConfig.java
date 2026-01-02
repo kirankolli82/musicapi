@@ -26,4 +26,3 @@ public class AlphaVantageConfig {
 		return ((ResteasyWebTarget) target).proxy(AlphaVantageClient.class);
 	}
 }
-

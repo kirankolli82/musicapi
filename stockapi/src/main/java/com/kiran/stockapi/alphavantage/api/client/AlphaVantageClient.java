@@ -8,7 +8,6 @@ import jakarta.ws.rs.QueryParam;
 public interface AlphaVantageClient {
 	@Path("query")
 	@GET
-	RealtimeBulkQuotesResponse getRealtimeBulkQuotes(
-			@QueryParam("function") String function,
+	RealtimeBulkQuotesResponse getRealtimeBulkQuotes(@QueryParam("function") String function,
 			@QueryParam("symbol") String symbols);
 }

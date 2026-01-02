@@ -30,31 +30,16 @@ class AlphaVantageResourceTest {
 	void testGetRealtimeBulkQuotes() {
 		// Arrange
 		String symbols = "AAPL,MSFT";
-		StockQuote quote1 = StockQuote.builder()
-				.symbol("AAPL")
-				.timestamp("2026-01-01 16:00:00")
-				.open(new BigDecimal("150.00"))
-				.high(new BigDecimal("155.00"))
-				.low(new BigDecimal("149.00"))
-				.close(new BigDecimal("154.50"))
-				.volume("1000000")
-				.build();
+		StockQuote quote1 = StockQuote.builder().symbol("AAPL").timestamp("2026-01-01 16:00:00")
+				.open(new BigDecimal("150.00")).high(new BigDecimal("155.00")).low(new BigDecimal("149.00"))
+				.close(new BigDecimal("154.50")).volume("1000000").build();
 
-		StockQuote quote2 = StockQuote.builder()
-				.symbol("MSFT")
-				.timestamp("2026-01-01 16:00:00")
-				.open(new BigDecimal("300.00"))
-				.high(new BigDecimal("305.00"))
-				.low(new BigDecimal("299.00"))
-				.close(new BigDecimal("304.50"))
-				.volume("500000")
-				.build();
+		StockQuote quote2 = StockQuote.builder().symbol("MSFT").timestamp("2026-01-01 16:00:00")
+				.open(new BigDecimal("300.00")).high(new BigDecimal("305.00")).low(new BigDecimal("299.00"))
+				.close(new BigDecimal("304.50")).volume("500000").build();
 
 		RealtimeBulkQuotesResponse expectedResponse = RealtimeBulkQuotesResponse.builder()
-				.endpoint("REALTIME_BULK_QUOTES")
-				.message("Success")
-				.data(List.of(quote1, quote2))
-				.build();
+				.endpoint("REALTIME_BULK_QUOTES").message("Success").data(List.of(quote1, quote2)).build();
 
 		when(alphaVantageClient.getRealtimeBulkQuotes(eq("REALTIME_BULK_QUOTES"), eq(symbols)))
 				.thenReturn(expectedResponse);
@@ -75,10 +60,7 @@ class AlphaVantageResourceTest {
 		// Arrange
 		String defaultSymbols = "GRID,MSFT,AAPL,IBM";
 		RealtimeBulkQuotesResponse expectedResponse = RealtimeBulkQuotesResponse.builder()
-				.endpoint("REALTIME_BULK_QUOTES")
-				.message("Success")
-				.data(List.of())
-				.build();
+				.endpoint("REALTIME_BULK_QUOTES").message("Success").data(List.of()).build();
 
 		when(alphaVantageClient.getRealtimeBulkQuotes(eq("REALTIME_BULK_QUOTES"), eq(defaultSymbols)))
 				.thenReturn(expectedResponse);
@@ -91,4 +73,3 @@ class AlphaVantageResourceTest {
 		verify(alphaVantageClient).getRealtimeBulkQuotes("REALTIME_BULK_QUOTES", defaultSymbols);
 	}
 }
-

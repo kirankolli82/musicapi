@@ -26,9 +26,7 @@ class AlphaVantageClientRequestFilterTest {
 	@BeforeEach
 	void setUp() {
 		secretManagerService = mock(SecretManagerService.class);
-		properties = new AlphaVantageClientProperties(
-				"https://www.alphavantage.co",
-				"test-project",
+		properties = new AlphaVantageClientProperties("https://www.alphavantage.co", "test-project",
 				"alpha_vantage_access_key");
 		filter = new AlphaVantageClientRequestFilter(properties, secretManagerService);
 		requestContext = mock(ClientRequestContext.class);
@@ -64,8 +62,8 @@ class AlphaVantageClientRequestFilterTest {
 
 		// Assert
 		assertNotNull(expectedUri);
-		assertEquals("https://www.alphavantage.co/query?function=REALTIME_BULK_QUOTES&symbol=AAPL&apikey=test-api-key-123",
+		assertEquals(
+				"https://www.alphavantage.co/query?function=REALTIME_BULK_QUOTES&symbol=AAPL&apikey=test-api-key-123",
 				expectedUri.toString());
 	}
 }
-

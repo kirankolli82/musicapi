@@ -26,4 +26,3 @@ public class AlphaVantageClientRequestFilter implements ClientRequestFilter {
 		requestContext.setUri(newUri);
 	}
 }
-
